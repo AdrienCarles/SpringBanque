@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Résultat de la création du client</title>
+</head>
+<body>
+<h1>Résultat de la création du client</h1>
+
+<p th:text="'ID du client : ' + ${client.id}"></p>
+<p th:text="'Nom du client : ' + ${client.nom}"></p>
+<p th:text="'Prénom du client : ' + ${client.prenom}"></p>
+
+<a href="/client/lister">Retour à la liste des client</a>
+</body>
+</html>

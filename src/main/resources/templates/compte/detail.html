@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>Détail du Compte</title>
+</head>
+<body>
+<div>
+    <h1>Détail du Compte</h1>
+    <h2>
+        <span th:text="${compte.numero}"></span>
+    </h2>
+    <h2>
+        <span th:text="${compte.client.nom}"></span>
+        &nbsp;
+        <span th:text="${compte.client.prenom}"></span>
+        &nbsp;
+        <span th:text="${compte.credit}"></span>
+        &nbsp;
+        <span th:text="${compte.decouvert}"></span>
+    </h2>
+</div>
+</body>
+</html>

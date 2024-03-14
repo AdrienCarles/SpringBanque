@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <title>Créer un Compte</title>
+</head>
+<body>
+<h1>Créer un Compte</h1>
+<form action="#" th:action="@{/compte/creer}" th:object="${compte}" method="post">
+  <p>id du client: <input type="number" th:field="*{client}"></p>
+  <p>numéro: <input type="number" th:field="*{numero}"></p>
+  <p>decouvert: <input type="number" th:field="*{decouvert}"></p>
+  <p>credit: <input type="number" th:field="*{credit}"></p>
+  <p><input type="submit" value="Valider"><input type="reset" value="Annuler"></p>
+</form>
+</body>
+</html>

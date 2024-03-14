@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>Détail du client</title>
+</head>
+<body>
+<div>
+    <h1>Détail du client</h1>
+    <h2>
+        <span th:text="${client.prenom}"></span>
+        &nbsp;
+        <span th:text="${#strings.toUpperCase(client.nom)}"></span>
+    </h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id du compte</th>
+            <th>N° du compte</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cpt : ${client.comptes}">
+            <td th:text="${cpt.id}">xx</td>
+            <td th:text="${cpt.numero}">xx</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

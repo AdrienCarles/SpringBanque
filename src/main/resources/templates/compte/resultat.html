@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Résultat de la création du compte</title>
+</head>
+<body>
+<h1>Résultat de la création du compte</h1>
+
+<p th:text="'ID du compte : ' + ${compte.id}"></p>
+<p th:text="'Nom du compte : ' + ${compte.nom}"></p>
+<p th:text="'Prénom du compte : ' + ${compte.prenom}"></p>
+
+<a href="/compte/lister">Retour à la liste des comptes</a>
+</body>
+</html>

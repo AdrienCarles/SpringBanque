@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Éditer un client</title>
+</head>
+<body>
+<h1>Éditer un client</h1>
+<form action="/client/editer" method="post">
+    <input type="hidden" id="id" name="id" th:value="${client.id}">
+    <label for="nom">Nom:</label><br>
+    <input type="text" id="nom" name="nom" th:value="${client.nom}"><br>
+    <label for="prenom">Prénom:</label><br>
+    <input type="text" id="prenom" name="prenom" th:value="${client.prenom}"><br>
+    <input type="submit" value="Éditer">
+</form>
+</body>
+</html>

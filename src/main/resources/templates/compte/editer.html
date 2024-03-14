@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Éditer un compte</title>
+</head>
+<body>
+<h1>Éditer un compte</h1>
+<form action="/compte/editer" method="post">
+    <input type="hidden" id="id" name="id" th:value="${compte.id}">
+    <label for="numero">Numero du vompte:</label><br>
+    <input type="text" id="numero" name="numero" th:value="${compte.numero}"><br>
+    <input type="submit" value="Éditer">
+</form>
+</body>
+</html>
