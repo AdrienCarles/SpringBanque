@@ -6,7 +6,7 @@ const BoutonRetour = () => {
     const navigate = useNavigate();
 
     return (
-        <Button variant="secondary" onClick={() => navigate(-1)}>Retour</Button>
+        <Button variant="dark" onClick={() => navigate(-1)}>Retour</Button>
     );
 };
 

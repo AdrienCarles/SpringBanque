@@ -31,14 +31,15 @@ public class ComptesController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Compte> updateCompte(@PathVariable Integer id, @RequestBody Compte compte) {
-        Optional<Compte> existingCompte = compteService.getCompte(id);
-        if(existingCompte.isPresent()) {
-            compte.setId(id);
-            return ResponseEntity.ok(compteService.saveCompte(compte));
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public ResponseEntity<Compte> updateCompte(@PathVariable Integer id, @RequestBody Compte compteDetails) {
+        return compteService.getCompte(id).map(compteExistant -> {
+            // Mettre à jour sélectivement les champs de compteExistant avec ceux de compteDetails
+            if (compteDetails.getCredit() != null) {
+                compteExistant.setCredit(compteDetails.getCredit());
+            }
+            Compte updatedCompte = compteService.saveCompte(compteExistant);
+            return ResponseEntity.ok(updatedCompte);
+        }).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{id}")

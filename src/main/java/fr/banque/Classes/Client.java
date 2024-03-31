@@ -1,6 +1,7 @@
 package fr.banque.Classes;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
@@ -21,10 +22,8 @@ public class Client
     @Column(name = "prenom", length = 50)
     private String prenom;
 
-    @Column(name = "role", length = 50)
-    private String role;
-
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Compte> comptes = new ArrayList<>();
 
     // Getters
@@ -36,9 +35,6 @@ public class Client
     }
     public String getPrenom() {
         return this.prenom;
-    }
-    public String getRole() {
-        return this.role;
     }
     public List<Compte> getComptes() {
         return this.comptes;
@@ -54,9 +50,6 @@ public class Client
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
-    public void setRole(String role) {
-    this.role = role;
-}
     public void setComptes(List<Compte> comptes) {
         this.comptes = comptes;
     }
